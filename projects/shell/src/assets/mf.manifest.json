@@ -1,3 +1,5 @@
 {
-	"mfe1": "http://localhost:3000/remoteEntry.js"
+	"details": "http://localhost:3001/remoteEntry.js",
+	"layout": "http://localhost:3002/remoteEntry.js",
+	"home": "http://localhost:3003/remoteEntry.js"
 }

@@ -5,27 +5,30 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
+    path: 'home',
     loadChildren: () =>
         loadRemoteModule({
-            type: 'module',
-            remoteEntry: 'http://localhost:3003/remoteEntry.js',
+            type: 'manifest',
+            remoteName: 'home',
             exposedModule: './Module'
         })
         .then(m => m.AppModule)
 },
   {
     path: 'details',
-    pathMatch: 'full',
     loadChildren: () =>
         loadRemoteModule({
-            type: 'module',
-            remoteEntry: 'http://localhost:3001/remoteEntry.js',
+            type: 'manifest',
+            remoteName: 'details',
             exposedModule: './Module'
         })
         .then(m => m.AppModule)
 },
+
+{
+  path: '**',
+  redirectTo: 'home'
+}
 ];
 
 @NgModule({

@@ -1,1 +1,10 @@
-home page
+<section class="products">
+    <div class="products__item" *ngFor="let product of products">
+        <img [src]="product.image" alt="" class="products__item-image">
+
+        <h1 class="products__item-title">{{product.name}}</h1>
+        <p class="products__item-description">{{product.description}}</p>
+
+        <button class="products__item-add">Add to card</button>
+    </div>
+</section>
