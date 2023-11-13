@@ -25,5 +25,39 @@
             color: lightslategray;
             text-align: center;
         }
+
+        &-price {
+            font-size: 24px;
+            color: green;
+        }
+
+        &-buttons {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            
+            button {
+                font-size: 16px;
+                border-radius: 20px;
+                outline: none;
+                padding: 5px 20px;
+                cursor: pointer;
+                border: 2px solid black;
+                transition: 0.3s opacity ease;
+    
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+
+            .add {
+                background-color: bisque;
+            }
+
+            .view {
+                background-color: cadetblue;
+            }
+        }
+        
     }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsLibService } from 'products-lib';
+import { Observable } from 'rxjs/internal/Observable';
 import { Product } from 'server/src/products';
 
 @Component({
@@ -10,8 +11,7 @@ import { Product } from 'server/src/products';
 export class AppComponent implements OnInit {
   title = 'home';
 
-  products: Product[] = []
-
+  products$?: Observable<Product[]>;
   constructor(
     private productsService: ProductsLibService
   ) {
@@ -19,6 +19,6 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.products = await this.productsService.loadProducts()
+    this.products$ = this.productsService.getProducts()
   }
 }

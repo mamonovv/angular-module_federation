@@ -23,9 +23,11 @@ export class ProductsLibService {
     private http: HttpClient
   ) { }
 
-  async loadProducts(): Promise<Product[]> {
-    const res = await firstValueFrom(this.http.get<Product[]>(`${this.API_SERVER}/products`));
-    this.products = res;
-    return this.products;
+  getProducts() {
+    return this.http.get<Product[]>(`${this.API_SERVER}/products`);
+  }
+
+  getProductById(id: number) {
+    return this.http.get<Product>(`${this.API_SERVER}/products/${id}`);
   }
 }

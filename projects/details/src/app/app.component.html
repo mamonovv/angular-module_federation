@@ -1,1 +1,8 @@
-details
+<div class="product" *ngIf="product$ | async as product">
+        <img class="product__image" [src]="product.image" alt="img">
+    <div class="product__data">
+        <h1 class="title">{{product.name}}</h1>
+        <p class="description">{{product.description}}</p>
+        <p class="description">{{product.longDescription}}</p>
+    </div>
+</div>

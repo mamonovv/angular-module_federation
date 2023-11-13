@@ -1,10 +1,14 @@
 <section class="products">
-    <div class="products__item" *ngFor="let product of products">
+    <div class="products__item" *ngFor="let product of products$ | async">
         <img [src]="product.image" alt="" class="products__item-image">
 
         <h1 class="products__item-title">{{product.name}}</h1>
         <p class="products__item-description">{{product.description}}</p>
+        <div class="products__item-price">{{product.price | currency}}</div>
 
-        <button class="products__item-add">Add to card</button>
+        <div class="products__item-buttons">
+            <button class="add">Add to card</button>
+            <button class="view" routerLink="/details/{{product.id}}">View Details</button>
+        </div>
     </div>
 </section>

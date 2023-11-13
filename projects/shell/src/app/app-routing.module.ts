@@ -15,7 +15,7 @@ const routes: Routes = [
         .then(m => m.AppModule)
 },
   {
-    path: 'details',
+    path: 'details/:id',
     loadChildren: () =>
         loadRemoteModule({
             type: 'manifest',
