@@ -7,7 +7,7 @@
         <div class="products__item-price">{{product.price | currency}}</div>
 
         <div class="products__item-buttons">
-            <button class="add">Add to card</button>
+            <button class="add" *ngIf="auth.isLoggedIn" (click)="addToCart(product.id)">Add to card</button>
             <button class="view" routerLink="/details/{{product.id}}">View Details</button>
         </div>
     </div>
