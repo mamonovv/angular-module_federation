@@ -1,1 +1,25 @@
-<h1>JWT: {{auth.jwt$ | async}}</h1>
+<section class="cart">
+    <div class="cart__header">
+        <div class="item">Qunatity</div>
+        <div class="item">Image</div>
+        <div class="item">Name</div>
+        <div class="item">Price</div>
+    </div>
+
+    <div class="cart__item" *ngFor="let item of items">
+        <div class="quantity">{{item.quantity}}</div>
+        <img class="image" [src]="item.image"/>
+
+        <div class="name">{{item.name}}</div>
+        <div class="price">{{(item.quantity * item.price) | currency}}</div>
+    </div>
+
+    <div class="cart__total">
+        Total: {{itemsTotal | currency}}
+    </div>
+
+    <div class="cart__actions">
+        <button class="button clear" (click)="clearCart()">Clear Cart</button>
+        <button class="button checkout" (click)="clearCart()">Checkout</button>
+    </div>
+</section>
