@@ -1,7 +1,9 @@
 {
   "ts-node": {
-    "require": ["tsconfig-paths/register"]
-},
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
@@ -19,6 +21,9 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
+      "auth-lib": [
+        "projects/auth-lib/src/public-api.ts"
+      ],
       "products-lib": [
         "projects/products-lib/src/public-api.ts"
       ]
@@ -29,7 +34,7 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

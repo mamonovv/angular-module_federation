@@ -24,6 +24,16 @@ const routes: Routes = [
         })
         .then(m => m.AppModule)
 },
+{
+  path: 'cart',
+  loadChildren: () =>
+      loadRemoteModule({
+          type: 'manifest',
+          remoteName: 'cart',
+          exposedModule: './Module'
+      })
+      .then(m => m.AppModule)
+},
 
 {
   path: '**',

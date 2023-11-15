@@ -14,10 +14,22 @@
         gap: 16px;
         justify-content:  center;
 
-        .title {
-            font-size: 60px;
-            font-weight: bold;
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__title, &__price {
+                font-size: 50px;
+                font-weight: bold;
+            }
+
+            &__price {
+                color: green;
+            }
         }
+
+        
 
         .description {
             font-size: 26px;

@@ -19,8 +19,8 @@ export class AppComponent implements AfterViewInit {
   async loadLayout(): Promise<void> {
 
     const m = await loadRemoteModule({
-      type: 'module',
-      remoteEntry: 'http://localhost:3002/remoteEntry.js',
+      type: 'manifest',
+      remoteName: 'layout',
       exposedModule: './Component'
     });
 

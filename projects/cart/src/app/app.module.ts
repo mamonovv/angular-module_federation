@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
-import { NgHeroiconsModule } from "@dimaslz/ng-heroicons";
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './components/login/login.component';
+import { NgHeroiconsModule } from '@dimaslz/ng-heroicons';
+import { MiniCartComponent } from './components/mini-cart/mini-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    LoginComponent,
+    MiniCartComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     AppRoutingModule,
     NgHeroiconsModule,
   ],
