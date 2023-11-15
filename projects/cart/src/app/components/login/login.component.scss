@@ -1,0 +1,20 @@
+.login {
+    display: flex;
+    align-items: center;
+    
+    &__button{
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        transition: 0.3s ease opacity;
+        cursor: pointer;
+    
+    
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+

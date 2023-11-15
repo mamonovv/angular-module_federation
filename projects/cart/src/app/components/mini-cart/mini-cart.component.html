@@ -1,3 +1,11 @@
-<button>
-    <shopping-cart-outline-icon></shopping-cart-outline-icon>
-</button>
+<ng-container *ngIf="items">
+    <button class="cart-button" routerLink="/cart">
+        <shopping-cart-outline-icon [size]="24"></shopping-cart-outline-icon>
+        {{items.length}}
+    </button>
+</ng-container>
+
+
+
+
+

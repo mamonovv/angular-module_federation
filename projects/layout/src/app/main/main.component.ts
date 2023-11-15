@@ -7,13 +7,15 @@ import { Component, ViewChild, ViewContainerRef } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-  @ViewChild('login', { read: ViewContainerRef }) layout!: ViewContainerRef;
+  @ViewChild('login', { read: ViewContainerRef }) login!: ViewContainerRef;
+  @ViewChild('cart', { read: ViewContainerRef }) cart!: ViewContainerRef;
 
   ngAfterViewInit() {
-    this.loadLayout()
+    this.loadLogin()
+    this.loadCart();
   }
 
-  async loadLayout(): Promise<void> {
+  async loadLogin(): Promise<void> {
 
     const {LoginComponent} = await loadRemoteModule({
       type: 'module',
@@ -21,10 +23,19 @@ export class MainComponent {
       exposedModule: './Login'
     });
 
-    console.log(LoginComponent)
-
     // return ref, to interact with component
-    this.layout.createComponent(LoginComponent);
+    this.login.createComponent(LoginComponent);
+}
 
+async loadCart(): Promise<void> {
+
+  const {MiniCartComponent} = await loadRemoteModule({
+    type: 'module',
+    remoteEntry: 'http://localhost:3004/remoteEntry.js',
+    exposedModule: './MiniCart'
+  });
+
+  // return ref, to interact with component
+  this.cart.createComponent(MiniCartComponent);
 }
 }

@@ -1,5 +1,5 @@
-<div *ngIf="!auth.isLoggedIn">
-     <button (click)="login()">
-        <finger-print-outline-icon></finger-print-outline-icon>
+<div class="login" *ngIf="!auth.isLoggedIn">
+     <button class="login__button" (click)="login()">
+        <finger-print-outline-icon [size]="24"></finger-print-outline-icon>
     </button>
 </div>
